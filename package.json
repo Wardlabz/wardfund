@@ -2,6 +2,7 @@
 	"name": "wardfund",
 	"version": "0.0.1",
 	"devDependencies": {
+		"@wardfund/shared": "workspace:*",
 		"@biomejs/biome": "1.9.4",
 		"@commitlint/cli": "^19.6.1",
 		"@commitlint/config-conventional": "^19.6.0",
