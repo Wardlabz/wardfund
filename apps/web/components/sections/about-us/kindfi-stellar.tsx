@@ -23,9 +23,9 @@ const WardFundStellar = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
 					viewport={{ once: true, amount: 0.2 }}
-					className="text-3xl md:text-4xl font-bold text-gray-900"
+					className="text-3xl md:text-4xl font-bold"
 				>
-					WardFund & Stellar: A Shared Vision
+					WardFund + Stellar: A Shared Vision
 				</motion.h2>
 
 				<motion.p
@@ -35,8 +35,9 @@ const WardFundStellar = () => {
 					viewport={{ once: true, amount: 0.2 }}
 					className="text-gray-600 max-w-2xl mx-auto mt-4"
 				>
-					Stellar powers WardFund with transparency, efficiency, and global
-					accessibility.
+					With Stellar, WardFund brings trustless, efficient, and borderless
+					collaboration to impact-driven communities from small NGOs in Costa
+					Rica to large donor collectives across LATAM.
 				</motion.p>
 
 				<motion.div
