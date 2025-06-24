@@ -9,6 +9,13 @@ The WardFund monorepo apps and services are the following:
 - [services/ai](./services/ai): The AI service.
 - [services/dictionary](./services/dictionary): The dictionary service.
 
+## 📣 Community
+
+Join our open-source contributor community on Telegram:  
+**[https://t.me/+CWeVHOZb5no1NmQx](https://t.me/+CWeVHOZb5no1NmQx)**
+
+We collaborate, debug, and build together — whether you're a beginner or advanced dev, you're welcome here.
+
 ## 🚀 Quick Start
 
 ### BEFORE ANYTHING ELSE
