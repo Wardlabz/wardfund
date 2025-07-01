@@ -1,3 +1,4 @@
+import { WardFund } from '@/assets/icons/wardfund'
 import { MaterialIcons } from '@expo/vector-icons'
 import React, { useState } from 'react'
 import {
@@ -9,7 +10,6 @@ import {
 	View,
 } from 'react-native'
 import RNPickerSelect from 'react-native-picker-select'
-import WardFund from '../assets/icons/wardfund'
 import { allItems } from '../components/StyledText'
 import { ItemList } from '../components/StyledText'
 

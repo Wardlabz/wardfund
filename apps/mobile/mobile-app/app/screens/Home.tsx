@@ -1,4 +1,4 @@
-import WardFund from '@/assets/icons/wardfund'
+import { WardFund } from '@/assets/icons/wardfund'
 import ItemList from '@/components/ItemList'
 import { allItems } from '@/components/StyledText'
 import { MaterialIcons } from '@expo/vector-icons'
