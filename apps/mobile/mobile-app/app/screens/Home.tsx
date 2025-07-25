@@ -1,16 +1,15 @@
-import { WardFund } from '@/assets/icons/wardfund'
-import ItemList from '@/components/ItemList'
-import { allItems } from '@/components/StyledText'
 import { MaterialIcons } from '@expo/vector-icons'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
-	Image,
 	ScrollView,
 	StyleSheet,
 	Text,
 	TouchableOpacity,
 	View,
 } from 'react-native'
+import { WardFund } from '@/assets/icons/wardfund'
+import ItemList from '@/components/ItemList'
+import { allItems } from '@/components/StyledText'
 
 // Header Component
 const Header = () => (
