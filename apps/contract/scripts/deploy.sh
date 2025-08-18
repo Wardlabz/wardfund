@@ -5,7 +5,7 @@ echo "🚀 Starting WardFund NFT Contract Deployment..."
 
 # Check if network parameter is provided
 NETWORK=${1:-testnet}  # Default to testnet if no argument provided
-SOURCE=${2:-alice}     # Default to alice if no source provided
+SOURCE=${2:-bob}     # Default to bob if no source provided
 
 echo "📝 Configuration:"
 echo "Network: $NETWORK"
@@ -15,7 +15,7 @@ echo "🛠️  Building contract..."
 cargo build --target wasm32-unknown-unknown --release
 
 echo "📦 Installing contract to network..."
-WASM_HASH=$(stellar contract install \
+WASM_HASH=$(stellar contract upload \
     --network $NETWORK \
     --source $SOURCE \
     --wasm target/wasm32-unknown-unknown/release/$NETWORK/wardfund_nft.wasm)
