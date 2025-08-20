@@ -1,4 +1,4 @@
-# WardFund Monorepo
+# <a href="https://deepwiki.com/wardfund-org/wardfund"><img src="https://deepwiki.com/badge.svg" width="164" height="164" alt="Ask DeepWiki"></a> WardFund Monorepo
 
 The WardFund monorepo apps and services are the following:
 
