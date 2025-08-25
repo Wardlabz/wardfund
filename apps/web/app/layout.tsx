@@ -14,9 +14,16 @@ const defaultUrl = appConfig.deployment.vercelUrl
 	: 'http://localhost:3000'
 export const metadata = {
 	metadataBase: new URL(defaultUrl),
-	title: 'WardFund',
+	title: {
+		default: 'WardFund',
+		template: '%s | WardFund',
+	},
 	description:
 		'The first Web3 platform connecting supporters to impactful causes while driving blockchain adoption for social and environmental change',
+	openGraph: {
+		siteName: 'WardFund',
+		type: 'website',
+	},
 }
 
 export default function RootLayout({

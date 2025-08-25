@@ -37,6 +37,7 @@ const Footer = () => {
 					href: 'https://wardfund.gitbook.io/wardfund',
 					target: '_blank',
 				},
+				{ label: 'News', href: '/news' },
 				{ label: 'Tutorials', href: '/tutorials' },
 				{ label: 'FAQs', href: '/faqs' },
 			],
