@@ -43,29 +43,81 @@ export function WardFundSupabaseAdapter(): Adapter {
 		async createUser(user: Omit<AdapterUser, 'id'>) {
 			console.log('🔧 WardFundSupabaseAdapter: Creating user', user)
 
-			// Create user using base adapter
-			if (!baseAdapter.createUser) {
-				throw new Error('Base adapter createUser method is not available')
-			}
-			const createdUser = await baseAdapter.createUser(user as AdapterUser)
+			try {
+				// Create user using base adapter first
+				if (!baseAdapter.createUser) {
+					throw new Error('Base adapter createUser method is not available')
+				}
+				const createdUser = await baseAdapter.createUser(user as AdapterUser)
 
-			console.log(
-				'🔧 WardFundSupabaseAdapter: User created successfully',
-				createdUser,
-			)
-			return createdUser
+				// Only create profile if user creation was successful
+				if (!createdUser?.id || !createdUser?.email) {
+					// Handle user creation failure
+					console.error(
+						'🔧 WardFundSupabaseAdapter: User creation failed',
+						createdUser,
+					)
+					throw new Error('User creation failed')
+				}
+				// Check if profile already exists to avoid conflicts
+				const { data: existingProfile } = await supabase
+					.from('profiles')
+					.select('id')
+					.eq('next_auth_user_id', createdUser.id)
+					.single()
+
+				if (existingProfile) {
+					console.warn(
+						'🔧 WardFundSupabaseAdapter: Profile already exists',
+						existingProfile.id,
+					)
+					throw new Error('Profile already exists')
+				}
+				// Create corresponding profile in public schema
+				const { error: profileError } = await supabase.from('profiles').insert({
+					// @ts-ignore asking for full object, for now it is OK to ignore until more tests are done.
+					next_auth_user_id: createdUser.id,
+					email: createdUser.email,
+					display_name: createdUser.name || null,
+					image_url: createdUser.image || null,
+					role: 'USER', // Default role
+					created_at: new Date().toISOString(),
+					updated_at: new Date().toISOString(),
+				})
+
+				if (profileError) {
+					console.error(
+						'🔧 WardFundSupabaseAdapter: Profile creation error',
+						profileError,
+					)
+					// Don't throw here to avoid breaking the auth flow
+					// The profile can be created later if needed
+				}
+
+				console.log(
+					'🔧 WardFundSupabaseAdapter: User created successfully',
+					createdUser,
+				)
+				return createdUser
+			} catch (error) {
+				console.error('🔧 WardFundSupabaseAdapter: User creation error', error)
+				throw error
+			}
 		},
 
 		async getUser(id: string) {
 			console.log('🔧 WardFundSupabaseAdapter: Getting user', id)
 
-			// Get user using base adapter
-			if (!baseAdapter.getUser) {
-				return null
-			}
-			const user = await baseAdapter.getUser(id)
+			try {
+				// Get user using base adapter
+				if (!baseAdapter.getUser) {
+					return null
+				}
+				const user = await baseAdapter.getUser(id)
 
-			if (user) {
+				if (!user) {
+					return null
+				}
 				// Enhance user with WardFund-specific data
 				const { data: profileData } = await supabase
 					.from('profiles')
@@ -76,22 +128,28 @@ export function WardFundSupabaseAdapter(): Adapter {
 				if (profileData) {
 					;(user as WardFundUser).userData = profileData as UserData
 				}
-			}
 
-			console.log('🔧 WardFundSupabaseAdapter: User retrieved', user)
-			return user
+				console.log('🔧 WardFundSupabaseAdapter: User retrieved', user)
+				return user
+			} catch (error) {
+				console.error('🔧 WardFundSupabaseAdapter: Get user error', error)
+				return null
+			}
 		},
 
 		async getUserByEmail(email: string) {
 			console.log('🔧 WardFundSupabaseAdapter: Getting user by email', email)
 
-			// Get user using base adapter
-			if (!baseAdapter.getUserByEmail) {
-				return null
-			}
-			const user = await baseAdapter.getUserByEmail(email)
+			try {
+				// Get user using base adapter
+				if (!baseAdapter.getUserByEmail) {
+					return null
+				}
+				const user = await baseAdapter.getUserByEmail(email)
 
-			if (user) {
+				if (!user) {
+					return null
+				}
 				// Enhance user with WardFund-specific data
 				const { data: profileData } = await supabase
 					.from('profiles')
@@ -102,10 +160,16 @@ export function WardFundSupabaseAdapter(): Adapter {
 				if (profileData) {
 					;(user as WardFundUser).userData = profileData as UserData
 				}
-			}
 
-			console.log('🔧 WardFundSupabaseAdapter: User retrieved by email', user)
-			return user
+				console.log('🔧 WardFundSupabaseAdapter: User retrieved by email', user)
+				return user
+			} catch (error) {
+				console.error(
+					'🔧 WardFundSupabaseAdapter: Get user by email error',
+					error,
+				)
+				return null
+			}
 		},
 
 		async getUserByAccount({
