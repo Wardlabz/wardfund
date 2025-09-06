@@ -19,8 +19,18 @@ export const corsConfig: CorsOptions = {
 		appConfig.env.nodeEnv === 'production'
 			? appConfig.kycServer.allowedOrigins
 				? appConfig.kycServer.allowedOrigins.split(',')
-				: ['https://app.wardfund.com']
-			: '*',
+				: [
+						'https://wardfund.org',
+						'https://*.wardfund.org',
+						'https://dev-api.dashboard.wardfund.org',
+					]
+			: [
+					'http://localhost:3000',
+					'http://localhost:3001',
+					'https://wardfund.org',
+					'https://*.wardfund.org',
+					'https://dev-api.dashboard.wardfund.org',
+				],
 
 	// HTTP methods allowed
 	allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
