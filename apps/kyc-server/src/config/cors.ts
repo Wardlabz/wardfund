@@ -21,6 +21,7 @@ export const corsConfig: CorsOptions = {
 				? appConfig.kycServer.allowedOrigins.split(',')
 				: [
 						'https://wardfund.org',
+						'https://www.wardfund.org',
 						'https://*.wardfund.org',
 						'https://dev-api.dashboard.wardfund.org',
 					]
