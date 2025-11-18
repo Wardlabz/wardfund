@@ -1,6 +1,9 @@
 {
 	"author": "wardfund",
 	"description": "supabase module for wardfund",
+	"dependencies": {
+		"zod": "^3.23.8"
+	},
 	"devDependencies": {
 		"supabase": "^2.0.0",
 		"supabase-to-zod": "1.0.5"
