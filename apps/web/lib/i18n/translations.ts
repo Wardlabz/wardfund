@@ -4,7 +4,7 @@ export const translations = {
 		nav: {
 			projects: 'Projects',
 			resources: 'Resources',
-			about: 'About WardFund',
+			about: 'About',
 			news: 'News',
 			signIn: 'Sign in',
 			signUp: 'Sign up',
@@ -646,7 +646,7 @@ export const translations = {
 		nav: {
 			projects: 'Proyectos',
 			resources: 'Recursos',
-			about: 'Acerca de WardFund',
+			about: 'Acerca de',
 			news: 'Noticias',
 			signIn: 'Iniciar sesión',
 			signUp: 'Registrarse',
