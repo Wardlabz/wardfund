@@ -13,7 +13,6 @@ export const nextAuthOption: NextAuthOptions = {
 	providers: [wardfundWebAuthnProvider],
 	pages: {
 		signIn: '/sign-in',
-		// TODO: to be implemented
 		// signOut: '/sign-out',
 	},
 	callbacks: {
