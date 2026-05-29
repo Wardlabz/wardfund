@@ -1,4 +1,4 @@
-# WardFund Code of Conduct
+# WardFund Code of  Conduct
 
 ## Our Pledge
 
