@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken'
 import type { NextAuthOptions, User } from 'next-auth'
 import { WardFundSupabaseAdapter } from '~/auth/wardfund-supabase-adapter'
 import { wardfundWebAuthnProvider } from '~/auth/wardfund-webauthn.provider'
+import { logger } from '@/lib/logger'
 
 const appConfig: AppEnvInterface = appEnvConfig('web')
 
@@ -60,7 +61,7 @@ export const nextAuthOption: NextAuthOptions = {
 		},
 		async session({ session, token }) {
 			if (!token) {
-				console.error('❌ No token found in session callback')
+				logger.error('❌ No token found in session callback')
 				return session
 			}
 
