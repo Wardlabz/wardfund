@@ -41,10 +41,7 @@ export function RoleSelectionModal({
 		setIsSaving(true)
 		try {
 			const supabase = createSupabaseBrowserClient()
-			const { error } = await supabase
-				.from('profiles')
-				.update({ role })
-				.eq('id', userId)
+			const { error } = await supabase.from('profiles').update({ role }).eq('id', userId)
 
 			if (error) throw error
 
@@ -66,12 +63,10 @@ export function RoleSelectionModal({
 		<Dialog open={open} onOpenChange={onOpenChange}>
 			<DialogContent className="sm:max-w-[600px]">
 				<DialogHeader>
-					<DialogTitle className="text-center text-2xl font-bold">
-						Welcome to WardFund
-					</DialogTitle>
+					<DialogTitle className="text-center text-2xl font-bold">Welcome to WardFund</DialogTitle>
 					<DialogDescription className="text-center text-base">
-						Select how you&apos;d like to use WardFund. You can&apos;t change this
-						later in your settings.
+						Select how you&apos;d like to use WardFund. You can&apos;t change this later in your
+						settings.
 					</DialogDescription>
 				</DialogHeader>
 
