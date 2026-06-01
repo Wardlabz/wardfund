@@ -7,29 +7,50 @@ import { MissionVision } from '~/components/sections/about-us/mission-vision'
 import { Problems } from '~/components/sections/about-us/problems'
 import { Roadmap } from '~/components/sections/about-us/roadmap'
 import { WhyWardFundIsDifferent } from '~/components/sections/about-us/why-is-different'
+import { JsonLd } from '~/components/shared/json-ld'
+import { getBreadcrumbSchema } from '~/lib/seo/structured-data'
 
 export const metadata: Metadata = {
 	title: 'About Us | WardFund',
 	description:
-		'Mission, how WardFund works, and why milestone-based funding on Stellar is built for transparent social impact.',
+		"Learn about WardFund's mission, how milestone-based crowdfunding on Stellar works, and why transparent, blockchain-powered funding is the future of social impact.",
 	openGraph: {
-		title: 'About Us | WardFund',
+		title: 'About WardFund — Blockchain Crowdfunding for Social Impact',
 		description:
-			'Milestone-based crowdfunding on Stellar: mission, product story, and roadmap.',
+			'Milestone-based crowdfunding on Stellar: mission, product story, how it works, and our roadmap for transparent social impact funding.',
+		type: 'website',
+		url: '/about',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'About WardFund | Web3 Crowdfunding for Social Impact',
+		description:
+			'Milestone-based crowdfunding on Stellar: our mission, how it works, and our roadmap.',
+	},
+	alternates: {
+		canonical: '/about',
 	},
 }
 
 export default function AboutPage() {
 	return (
-		<main className="w-full flex flex-col" aria-label="About WardFund">
-			<Hero />
-			<MissionVision />
-			<Problems />
-			<WardFundStellar />
-			<HowItWorks />
-			<WhyWardFundIsDifferent />
-			<Roadmap />
-			<CallToAction />
-		</main>
+		<>
+			<JsonLd
+				data={getBreadcrumbSchema([
+					{ name: 'Home', url: '/' },
+					{ name: 'About Us', url: '/about' },
+				])}
+			/>
+			<main className="w-full flex flex-col" aria-label="About WardFund">
+				<Hero />
+				<MissionVision />
+				<Problems />
+				<WardFundStellar />
+				<HowItWorks />
+				<WhyWardFundIsDifferent />
+				<Roadmap />
+				<CallToAction />
+			</main>
+		</>
 	)
 }
