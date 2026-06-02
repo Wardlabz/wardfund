@@ -41,7 +41,7 @@ export default function AboutPage() {
 					{ name: 'About Us', url: '/about' },
 				])}
 			/>
-			<main className="w-full flex flex-col" aria-label="About WardFund">
+			<main className="flex w-full flex-col bg-white" aria-label="About WardFund">
 				<Hero />
 				<MissionVision />
 				<Problems />
