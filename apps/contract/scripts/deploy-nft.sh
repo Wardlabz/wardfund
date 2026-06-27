@@ -4,6 +4,9 @@
 
 set -e
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export CARGO_TARGET_DIR="$(cd "$SCRIPT_DIR/.." && pwd)/target"
+
 echo "========================================"
 echo "  WardFund NFT Contract Deployment"
 echo "========================================"
@@ -137,10 +140,12 @@ fi
 # Step 1: Build NFT contract
 echo ""
 echo "=== Step 1: Building NFT Contract ==="
-cargo build --target wasm32-unknown-unknown --release --manifest-path ./contracts/nft-wardfund/Cargo.toml || {
+cd contracts/nft-wardfund
+stellar contract build || {
     echo "Failed to build NFT Contract"
     exit 1
 }
+cd ../..
 echo "NFT Contract built successfully!"
 
 # Step 2: Upload WASM
@@ -149,7 +154,7 @@ echo "=== Step 2: Uploading WASM ==="
 NFT_WASM_HASH=$(stellar contract upload \
     --network "$NETWORK" \
     --source "$SOURCE" \
-    --wasm target/wasm32-unknown-unknown/release/nft_wardfund.wasm)
+    --wasm target/wasm32v1-none/release/nft_wardfund.wasm)
 
 echo "WASM Hash: $NFT_WASM_HASH"
 
