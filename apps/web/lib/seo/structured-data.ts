@@ -1,4 +1,8 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wardfund.org'
+export const SITE_URL = (
+	process.env.NEXT_PUBLIC_SITE_URL ||
+	process.env.NEXT_PUBLIC_APP_URL ||
+	'https://www.wardfund.org'
+).replace(/\/+$/, '')
 
 export interface OrganizationSchema {
 	'@context': string
