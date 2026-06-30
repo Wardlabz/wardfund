@@ -1,12 +1,5 @@
 import type { Metadata } from 'next'
-import { CallToAction } from '~/components/sections/about-us/call-to-action'
-import { Hero } from '~/components/sections/about-us/hero'
-import { HowItWorks } from '~/components/sections/about-us/how-it-works'
-import { WardFundStellar } from '~/components/sections/about-us/wardfund-stellar'
-import { MissionVision } from '~/components/sections/about-us/mission-vision'
-import { Problems } from '~/components/sections/about-us/problems'
-import { Roadmap } from '~/components/sections/about-us/roadmap'
-import { WhyWardFundIsDifferent } from '~/components/sections/about-us/why-is-different'
+import { DynamicAboutSections } from '~/components/sections/about-us/dynamic-sections'
 import { JsonLd } from '~/components/shared/json-ld'
 import { getBreadcrumbSchema } from '~/lib/seo/structured-data'
 
@@ -42,14 +35,14 @@ export default function AboutPage() {
 				])}
 			/>
 			<main className="flex w-full flex-col bg-white" aria-label="About WardFund">
-				<Hero />
-				<MissionVision />
-				<Problems />
-				<WardFundStellar />
-				<HowItWorks />
-				<WhyWardFundIsDifferent />
-				<Roadmap />
-				<CallToAction />
+				<DynamicAboutSections.Hero />
+				<DynamicAboutSections.MissionVision />
+				<DynamicAboutSections.Problems />
+				<DynamicAboutSections.WardFundStellar />
+				<DynamicAboutSections.HowItWorks />
+				<DynamicAboutSections.WhyWardFundIsDifferent />
+				<DynamicAboutSections.Roadmap />
+				<DynamicAboutSections.CallToAction />
 			</main>
 		</>
 	)
