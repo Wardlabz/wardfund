@@ -11,6 +11,7 @@ import { SectionContainer } from '~/components/shared/section-container'
 import { useWallet } from '~/hooks/contexts/use-stellar-wallet.context'
 import { useI18n } from '~/lib/i18n'
 import { cn } from '~/lib/utils'
+import { safeLocalStorageSet } from '~/lib/utils/safe-storage'
 import { AccountInfoCard } from './cards/account-info-card'
 import { GovernanceCard } from './cards/governance-card'
 import { KYCCard } from './cards/kyc-card'
@@ -108,7 +109,7 @@ export function ProfileDashboard({
 	}, [role])
 
 	const handleRoleSelected = () => {
-		localStorage.setItem('wardfund_role_chosen', 'true')
+		safeLocalStorageSet('wardfund_role_chosen', 'true')
 		setShowRoleModal(false)
 	}
 
