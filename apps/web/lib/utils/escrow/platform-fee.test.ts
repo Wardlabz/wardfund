@@ -2,6 +2,7 @@ import { describe, expect, test } from 'bun:test'
 import {
 	formatHumanPlatformFee,
 	fromTrustlessWorkPlatformFee,
+	getWardFundDeployPlatformFee,
 	getWardFundTrustlessWorkPlatformFee,
 	WARDFUND_PLATFORM_FEE_PERCENT,
 	WARDFUND_TRUSTLESS_WORK_PLATFORM_FEE,
@@ -13,6 +14,10 @@ describe('platform-fee', () => {
 		expect(WARDFUND_PLATFORM_FEE_PERCENT).toBe(1)
 		expect(WARDFUND_TRUSTLESS_WORK_PLATFORM_FEE).toBe(100)
 		expect(getWardFundTrustlessWorkPlatformFee()).toBe(100)
+	})
+
+	test('deploy API uses human percent', () => {
+		expect(getWardFundDeployPlatformFee()).toBe(1)
 	})
 
 	test('converts human percent to Trustless Work centi-percent', () => {
