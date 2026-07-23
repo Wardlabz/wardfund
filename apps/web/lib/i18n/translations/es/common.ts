@@ -31,4 +31,9 @@ export const common = {
 	share: 'Compartir',
 	copy: 'Copiar',
 	copied: '¡Copiado!',
+	contentLanguage: 'Idioma del contenido',
+	contentLanguageHelp:
+		'El idioma en el que escribes. WardFund generará automáticamente una traducción para los visitantes que usen el otro idioma.',
+	contentLanguageEn: 'Inglés',
+	contentLanguageEs: 'Español',
 }
