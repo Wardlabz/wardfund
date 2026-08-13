@@ -130,6 +130,6 @@ export const nextAuthOption: NextAuthOptions = {
 	theme: {
 		colorScheme: 'light',
 		brandColor: '#fafafa',
-		logo: '/images/wardfund-org.png',
+		logo: '/images/Wardlabz.png',
 	},
 }

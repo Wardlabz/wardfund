@@ -17,7 +17,7 @@ Ensure you have the following installed on your machine:
 1. **Clone the Repository (if you haven't already)**
 
 ```sh
-git clone https://github.com/wardfund-org/wardfund.git
+git clone https://github.com/Wardlabz/wardfund.git
 cd monorepo/services/supabase
 ```
 

@@ -41,4 +41,4 @@ WardFund welcomes AI crawlers and LLMs to index and summarize its public content
 ## Contact
 
 - Website: https://www.wardfund.org
-- GitHub: https://github.com/wardfund-org/wardfund
+- GitHub: https://github.com/Wardlabz/wardfund

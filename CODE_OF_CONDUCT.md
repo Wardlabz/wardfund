@@ -22,7 +22,7 @@ WardFund is on a mission to push the boundaries of what's possible with AI and W
 
 Examples of behavior that contributes to a positive environment for our community include:
 
-- **Technical Excellence**: Following our established [code style and conventions](https://wardfunds-organization.gitbook.io/development/code-and-design-guide-style-and-conventions).
+- **Technical Excellence**: Following our established [code style and conventions](https://wardfund.gitbook.io/development/code-and-design-guide-style-and-conventions).
 - **Collaborative Development**: Engaging constructively in code reviews, design discussions, and technical decisions.
 - **Inclusive Communication**: Using welcoming and inclusive language that respects diverse backgrounds and experiences.
 - **Constructive Feedback**: Providing helpful, actionable feedback that helps improve code quality and project outcomes.
@@ -79,12 +79,12 @@ All contributors must adhere to our comprehensive code style guide. Key requirem
 - **GitHub Issues**: For bug reports, feature requests, and technical discussions.
 - **Pull Requests**: For code contributions following our review process
 - **Telegram Community**: [Join our community](https://t.me/+CWeVHOZb5no1NmQx) for real-time collaboration, debugging help, and building connections.
-- **Documentation**: Refer to our [live docs](https://wardfunds-organization.gitbook.io/development) for comprehensive guides.
+- **Documentation**: Refer to our [live docs](https://wardfund.gitbook.io/development) for comprehensive guides.
 
 ### How to Contribute
 
-1. **Read Our Guides**: Familiarize yourself with our [OSS Contribution Guide](https://wardfunds-organization.gitbook.io/development/oss-contribution-guide).
-2. **Follow Our Conventions**: Study our [Code Style and Conventions](https://wardfunds-organization.gitbook.io/development/code-and-design-guide-style-and-conventions)
+1. **Read Our Guides**: Familiarize yourself with our [OSS Contribution Guide](https://wardfund.gitbook.io/development/oss-contribution-guide).
+2. **Follow Our Conventions**: Study our [Code Style and Conventions](https://wardfund.gitbook.io/development/code-and-design-guide-style-and-conventions)
 3. **Join the Community**: Connect with other contributors in our Telegram group.
 4. **Start Contributing**: Pick an issue, follow our application template, and submit quality code.
 
@@ -173,11 +173,11 @@ We believe in celebrating our community members who exemplify our values:
 
 ## Resources
 
-- **Live Documentation**: [https://wardfunds-organization.gitbook.io/development](https://wardfunds-organization.gitbook.io/development)
-- **Code Style Guide**: [Code and Design Guide Style and Conventions](https://wardfunds-organization.gitbook.io/development/code-and-design-guide-style-and-conventions)
-- **Contribution Guide**: [OSS Contribution Guide - How to Contribute](https://wardfunds-organization.gitbook.io/development/oss-contribution-guide/oss-contribution-guide-how-to-contribute)
+- **Live Documentation**: [https://wardfund.gitbook.io/development](https://wardfund.gitbook.io/development)
+- **Code Style Guide**: [Code and Design Guide Style and Conventions](https://wardfund.gitbook.io/development/code-and-design-guide-style-and-conventions)
+- **Contribution Guide**: [OSS Contribution Guide - How to Contribute](https://wardfund.gitbook.io/development/oss-contribution-guide/oss-contribution-guide-how-to-contribute)
 - **Community Chat**: [Telegram Community](https://t.me/+CWeVHOZb5no1NmQx)
-- **Project Architecture**: [WardFund Architecture Documentation](https://wardfunds-organization.gitbook.io/development/wardfund-architecture)
+- **Project Architecture**: [WardFund Architecture Documentation](https://wardfund.gitbook.io/development/wardfund-architecture)
 
 ## Attribution
 

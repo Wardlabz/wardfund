@@ -64,7 +64,7 @@ Project leads verify these essential elements:
 
 ## Issue Application Template
 
-[**Issue Application Template**](https://github.com/wardfund-org/wardfund/blob/main/docs/OSS%20Contribution%20Guide%2015f8754a4a4b80709015ed37649d6058/Issue%20Application%20Template%201758754a4a4b80b18556d7d2ba79dbc0.md)
+[**Issue Application Template**](https://github.com/Wardlabz/wardfund/blob/main/docs/OSS%20Contribution%20Guide%2015f8754a4a4b80709015ed37649d6058/Issue%20Application%20Template%201758754a4a4b80b18556d7d2ba79dbc0.md)
 
 ## Issue Reporting
 

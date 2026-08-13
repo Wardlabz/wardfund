@@ -1,22 +1,65 @@
 # WardFund
 
+**WardFund is an open-source, blockchain-powered social impact crowdfunding platform built on the Stellar network.** It connects fundraisers with backers through milestone-based funding, non-custodial escrow, smart wallets, and on-chain reputation — wrapped in a modern Next.js web experience, a SubQuery indexer, and AI-assisted KYC.
+
 The WardFund monorepo contains the following apps, services, and packages:
+
+## Repository Structure
+
+```
+wardfund/
+├── apps/
+│   ├── web/              # Next.js web application
+│   ├── contract/         # Stellar/Soroban smart contracts (Rust)
+│   └── indexer/          # SubQuery indexer for on-chain data
+├── services/
+│   ├── supabase/         # Supabase database migrations and configuration
+│   └── ai/               # AI service for face detection, sentiment, and analysis
+├── packages/
+│   ├── lib/              # Shared TypeScript library with utilities, hooks, and services
+│   └── drizzle/          # Drizzle ORM schema and migrations
+├── docs/                 # GitBook-synced documentation source
+└── scripts/              # Build and codegen scripts
+```
+
+## Key Features
+
+- 🔐 **Passkey Authentication** — WebAuthn-based passwordless auth with smart account integration
+- 👛 **Smart Wallets** — OpenZeppelin Smart Account Kit integration for secure wallet management
+- 📊 **Project Management** — Create, manage, and support social impact projects with milestone-based funding
+- 🔒 **Non-Custodial Escrow** — Trustless Work escrow integration for secure, milestone-based fund releases
+- 🏆 **On-Chain Reputation** — Reputation, quests, and streak contracts that reward active contributors
+- 🪪 **KYC Verification** — AI-native identity verification (Didit) with liveness detection and document checks
+- 🔔 **Notifications & Community** — Push notifications, comments, Q&A, project updates, and supporter tracking
 
 ## Apps
 
 - [apps/web](./apps/web): The Next.js web application
-- [apps/contract](./apps/contract): Stellar/Soroban smart contracts (Rust)
+- [apps/contract](./apps/contract): Stellar/Soroban smart contracts (Rust) — account + account-factory + auth-controller, NFT, reputation, quest, and streak contracts
 - [apps/indexer](./apps/indexer): SubQuery indexer for blockchain data indexing
 
 ## Services
 
 - [services/supabase](./services/supabase): Supabase database migrations and configuration
-- [services/ai](./services/ai): AI service for face detection and analysis
+- [services/ai](./services/ai): AI service for face detection and analysis (Express + HuggingFace)
 
 ## Packages
 
 - [packages/lib](./packages/lib): Shared TypeScript library with utilities, hooks, and services
 - [packages/drizzle](./packages/drizzle): Drizzle ORM schema and migrations
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Web | Next.js, React, TypeScript, Bun, Tailwind CSS, Shadcn UI |
+| Blockchain | Stellar/Soroban, OpenZeppelin Smart Account Kit, Trustless Work escrow |
+| Indexing | SubQuery |
+| Data | Supabase, Drizzle ORM |
+| AI | Express, HuggingFace inference |
+| Quality | Biome, Commitlint, Husky, Taskfile |
+
+---
 
 ## 📣 Community
 
@@ -33,13 +76,13 @@ We welcome contributions from the Stellar community and beyond! Before contribut
 
 1. **Read Our Code of Conduct**: All contributors must follow our [Code of Conduct](./CODE_OF_CONDUCT.md). It outlines our community standards, values, and expectations for respectful collaboration.
 
-2. **Review Our Contribution Guide**: Familiarize yourself with our comprehensive [OSS Contribution Guide](https://wardfunds-organization.gitbook.io/development/oss-contribution-guide) which covers:
+2. **Review Our Contribution Guide**: Familiarize yourself with our comprehensive [OSS Contribution Guide](https://wardfund.gitbook.io/development/oss-contribution-guide) which covers:
    - How to set up your development environment
    - Our code style and conventions
    - Git workflow and branch naming
    - Pull request process
 
-3. **Study Our Code Standards**: Review our [Code Style and Conventions](https://wardfunds-organization.gitbook.io/development/code-and-design-guide-style-and-conventions) to understand:
+3. **Study Our Code Standards**: Review our [Code Style and Conventions](https://wardfund.gitbook.io/development/code-and-design-guide-style-and-conventions) to understand:
    - TypeScript best practices
    - React/Next.js conventions
    - File organization and naming
@@ -136,10 +179,10 @@ Add the following configuration to your `~/.cursor/mcp.json` file:
 
 ### Resources
 
-- 📚 [Live Documentation](https://wardfunds-organization.gitbook.io/development)
+- 📚 [Live Documentation](https://wardfund.gitbook.io/development)
 - 💬 [Telegram Community](https://t.me/+CWeVHOZb5no1NmQx) - Get help and connect with contributors
 - 📋 [Code of Conduct](./CODE_OF_CONDUCT.md) - Community standards and expectations
-- 🏗️ [Architecture Documentation](https://wardfunds-organization.gitbook.io/development/wardfund-architecture)
+- 🏗️ [Architecture Documentation](https://wardfund.gitbook.io/development/wardfund-architecture)
 
 ### Questions?
 
@@ -147,9 +190,11 @@ If you have questions about contributing, feel free to:
 
 - Ask in our [Telegram community](https://t.me/+CWeVHOZb5no1NmQx)
 - Open a GitHub discussion
-- Review our [contribution guide](https://wardfunds-organization.gitbook.io/development/oss-contribution-guide)
+- Review our [contribution guide](https://wardfund.gitbook.io/development/oss-contribution-guide)
 
 **Thank you for contributing to WardFund!** 🚀
+
+---
 
 ## 🚀 Quick Start
 
@@ -215,3 +260,9 @@ Run `task` or `task --list` to see all available commands. Key commands include:
 - `task lint:fix` - Fix formatting and linting issues
 
 You can see the full list of commands in each `package.json` file in the `apps`, `services`, and `packages` directories.
+
+---
+
+## 📝 License
+
+This project is licensed under the terms of the [LICENSE](./LICENSE) file in the repository root.

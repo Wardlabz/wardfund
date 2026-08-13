@@ -64,7 +64,7 @@ export function getOrganizationSchema(): OrganizationSchema {
 		description:
 			'WardFund is the first Web3 crowdfunding platform connecting supporters to impactful social and environmental causes. Milestone-based funding on Stellar ensures transparency and accountability.',
 		foundingDate: '2024',
-		sameAs: ['https://github.com/wardfund-org/wardfund'],
+		sameAs: ['https://github.com/Wardlabz/wardfund'],
 		contactPoint: {
 			'@type': 'ContactPoint',
 			contactType: 'customer support',

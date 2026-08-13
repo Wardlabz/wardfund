@@ -38,7 +38,7 @@ members = [
 authors = ["WardFund Org"]
 edition = "2021"
 license = "MIT"
-repository = "https://github.com/wardfund-org/wardfund.git"
+repository = "https://github.com/Wardlabz/wardfund.git"
 categories = ["no-std", "wasm"]
 version = "0.1.0"
 

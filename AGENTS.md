@@ -192,4 +192,4 @@ Specialized skills live in `.agents/skills/`. Read the relevant `SKILL.md` befor
 
 - [README.md](./README.md) — community, contributing, quick start
 - [apps/web/README.md](./apps/web/README.md) — web app structure and features
-- [Architecture docs](https://wardfunds-organization.gitbook.io/development/wardfund-architecture)
+- [Architecture docs](https://wardfund.gitbook.io/development/wardfund-architecture)

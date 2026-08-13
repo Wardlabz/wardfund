@@ -100,7 +100,7 @@ const Footer = () => {
 		},
 		{
 			icon: GithubIcon,
-			href: 'https://github.com/wardfund-org',
+			href: 'https://github.com/Wardlabz',
 			label: 'GitHub',
 		},
 	] as const

@@ -178,7 +178,7 @@ Detailed engineering checklist: [`apps/web/lib/smart-account/README.md`](../apps
 
 - [Smart Account module README](../apps/web/lib/smart-account/README.md) — architecture, interfaces, integration points
 - [AGENTS.md](../AGENTS.md) — agent/developer rules for wallet boundaries
-- [WardFund architecture (GitBook)](https://wardfunds-organization.gitbook.io/development/wardfund-architecture) — broader system overview
+- [WardFund architecture (GitBook)](https://wardfund.gitbook.io/development/wardfund-architecture) — broader system overview
 
 ---
 
